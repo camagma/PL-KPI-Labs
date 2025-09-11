@@ -1,6 +1,0 @@
-n = int(input("введіть число n"))
-x1 = 0
-x2 = 1
-while x1 <= n:
-    print(x1)
-    x1, x2 = x2, x1 + x2

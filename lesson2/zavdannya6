@@ -1,0 +1,5 @@
+import random
+lst = []
+while len(lst) < 15:
+    a = random.randint(0, 100)
+
