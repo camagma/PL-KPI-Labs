@@ -1,0 +1,13 @@
+#4. Замінити всі числа, кратні 5, на `-1`.
+import random
+n = int(input("введіть довжину списку"))
+lst = []
+for i in range(n):
+    lst.append(random.randint(0,100))
+print(lst)
+for i in lst:
+    if i % 5 == 0:
+        lst.insert(lst.index(i), -1)
+        lst.remove(i)
+        
+print(lst)

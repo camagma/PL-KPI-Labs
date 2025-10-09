@@ -1,0 +1,12 @@
+#7. Знайти суму квадратів усіх елементів.
+import random
+n = int(input("введіть довжину списку"))
+lst = []
+newlst = []
+for i in range(n):
+    lst.append(random.randint(0,100))
+print(lst)
+for i in lst:
+    newlst.append(i ** 2)
+print(newlst)
+print("сума", sum(newlst))

@@ -1,0 +1,10 @@
+#2. Порахувати кількість елементів, що діляться на 3.
+import random
+n = int(input("введіть довжину списку"))
+lst = []
+for i in range(n):
+    lst.append(random.randint(0,100))
+print(lst)
+for i in lst:
+    if i % 3 == 0:
+        print(i)

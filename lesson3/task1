@@ -1,0 +1,8 @@
+#1. Створити список від 1 до 20. Вивести всі непарні елементи.
+lst = []
+for i in range(20):
+    lst.append(i)
+print(lst)
+for i in lst:
+    if i % 2 ==0:
+        print(i)

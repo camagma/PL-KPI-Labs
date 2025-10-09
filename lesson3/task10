@@ -1,0 +1,12 @@
+#10. Перевірити, чи є число `10` у списку.
+import random
+n = int(input("введіть довжину списку"))
+lst = []
+newlst = []
+for i in range(n):
+    lst.append(random.randint(0,100))
+print(lst)
+if 10 in lst:
+    print("так")
+else:
+    print("ні")
