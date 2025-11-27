@@ -1,25 +1,76 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36408.4 d17.14
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp6", "ConsoleApp6\ConsoleApp6.csproj", "{3B0477D6-EE25-4224-BD7D-352A0270D35F}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3B0477D6-EE25-4224-BD7D-352A0270D35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B0477D6-EE25-4224-BD7D-352A0270D35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B0477D6-EE25-4224-BD7D-352A0270D35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B0477D6-EE25-4224-BD7D-352A0270D35F}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {25D696F3-FF84-42ED-8D4E-0FD538D2C938}
-	EndGlobalSection
-EndGlobal
+//завдання 1
+/*Array arr = new int[] { 1, 2, 3, 4, 5 };
+foreach (int item in arr)
+{
+    if(item % 2 == 0)
+    {
+        Console.WriteLine(item);
+    }
+}
+*/
+//Створи `List<int>` з 20 випадкових чисел від 1 до 100. Залиш у списку тільки **парні числа**, усі інші видали
+/*List<int> numbers = new List<int>();
+Random rand = new Random();
+for (int i = 0; i < 20; i++)
+{
+    numbers.Add(rand.Next(1, 101));
+    Console.WriteLine("додане число:" + rand);
+}
+Console.WriteLine("\t");
+foreach (int item in numbers)
+{
+    if (item % 2 == 0)
+    {
+        Console.WriteLine(item + "- парне число з масиву");
+    }
+
+}
+
+//3.Є словник `"товар → ціна"`. Порахуй **середню ціну** товарів і виведи всі товари, чия ціна **нижча за середню*
+
+*/
+
+/*
+int sum = 0;
+Dictionary <String, int> products = new Dictionary<string, int>()
+{
+    {"apple", 20},
+    {"banana", 15},
+    {"orange", 25},
+    {"grape", 30},
+    {"kiwi", 10}
+};
+foreach (var item in products)
+{
+    sum += item.Value;
+
+}
+Console.WriteLine("Сума всіх товарів:" + sum);
+Console.WriteLine("середнє: " + sum / products.Count());
+*/
+using System.IO;
+string[] names = { "Олег", "Марія", "Степан", "Ірина", "Антон", "Софія", "Павло", "Катерина", "Дмитро", "Олена" };
+string[] surnames = { "Коваленко", "Сидорук", "Ткаченко", "Гуменюк", "Романів", "Федорчук", "Мельник", "Шевчук" };
+string[] groups = { "A-1", "B-2", "C-3", "D-4" };
+List<string> students = new List<string>();
+students.AddRange(names);
+students.AddRange(surnames);
+students.AddRange(groups);
+string path = Console.ReadLine();
+string filePath = Path.Combine(path, "students.txt");
+try
+{
+    using (StreamWriter sw = new StreamWriter(filePath))
+    {
+        foreach(var student in students)
+        {
+            sw.WriteLine(student);
+        }
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine("Помилка при записі файлу: " + ex.Message);
+}
+Console.WriteLine(File.ReadAllText("students.txt"));
